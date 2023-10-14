@@ -6,7 +6,10 @@ const errorHandler = require('./middlewares/errorHandler.js')
 const morgan = require('morgan')
 const swaggerUI = require('swagger-ui-express')
 const swaggerDocument = require('./api-films.json')
+const cors = require ('cors')
 
+
+app.use(cors())
 
 app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerDocument))
 
